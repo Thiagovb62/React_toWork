@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 
-import Expenses from './components/Expenses';
+import Expenses from './components/Expenses/Expenses';
 function App() {
 
     const expenses = [
@@ -22,14 +22,20 @@ function App() {
         }
     ];
 
-  return (
-    <div className="App">
-      <header className="App-header">
-          <h2 className="title">List of Expenses</h2>
-            <Expenses items={expenses}/>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <header className="App-header">
+                <h2 className="title">List of Expenses</h2>
+                <Expenses items={expenses}/>
+            </header>
+        </div>
+    );
+
+    // return React.createElement(
+    //     "div",
+    //     {},
+    //     React.createElement("h2", {}, "List of Expenses"),
+    //     React.createElement(Expenses, {items: expenses}));
 }
 
 export default App;
