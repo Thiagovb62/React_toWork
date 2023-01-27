@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-
+import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from './components/Expenses/Expenses';
 function App() {
 
@@ -26,6 +26,7 @@ function App() {
         <div className="App">
             <header className="App-header">
                 <h2 className="title">List of Expenses</h2>
+                <NewExpense/>
                 <Expenses items={expenses}/>
             </header>
         </div>
