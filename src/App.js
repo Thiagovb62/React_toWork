@@ -21,12 +21,15 @@ function App() {
             date: new Date(2021, 2, 28),
         }
     ];
-
+const addExpenseHandler = (expense) => {
+        console.log('In App.js');
+        console.log(expense);
+}
     return (
         <div className="App">
             <header className="App-header">
                 <h2 className="title">List of Expenses</h2>
-                <NewExpense/>
+                <NewExpense onAddExpense={addExpenseHandler}/>
                 <Expenses items={expenses}/>
             </header>
         </div>
