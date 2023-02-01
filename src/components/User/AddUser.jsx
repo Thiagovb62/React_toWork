@@ -5,6 +5,8 @@ import Button from "../UI/Button";
 const AddUser = (props ) => {
 
     const [enteredUsername, setEnteredUsername] = useState('');
+
+
     const [enteredAge, setEnteredAge] = useState('');
 
     const addUserHandler = (event) => {
@@ -15,7 +17,12 @@ const AddUser = (props ) => {
         if (+enteredAge < 1) {
             return;
         }
-        console.log(enteredUsername, enteredAge);
+
+    const User = {
+        name: enteredUsername,
+        age: enteredAge
+}
+        props.onAddUser(User);
         setEnteredAge('');
         setEnteredUsername('');
     }
