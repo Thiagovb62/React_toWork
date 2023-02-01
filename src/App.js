@@ -23,9 +23,9 @@ const DUMMY_DATA = [
 
 function App() {
     const [users, setUsers] = useState(DUMMY_DATA);
-    const addUserHandler = (user) => {
+    const addUserHandler = (uName,uAge) => {
         setUsers((prevUsers) => {
-            return [user, ...prevUsers];
+            return [...prevUsers,{name:uName, age:uAge, id:Math.random().toString()}];
         });
     }
     return (
