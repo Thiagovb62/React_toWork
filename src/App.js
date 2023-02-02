@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState} from 'react';
+import React, {useState,fragment} from 'react';
 import AddUser from "./components/User/AddUser";
 import UsersList from "./components/User/UsersList";
 
@@ -28,15 +28,19 @@ function App() {
             return [...prevUsers,{name:uName, age:uAge, id:Math.random().toString()}];
         });
     }
-    return (
-        <div className="App">
-            <header className="App-header">
-                <AddUser onAddUser={addUserHandler}/>
-                <UsersList users={users}/>
-            </header>
-        </div>
-    );
+    // return <>
+    //     <header className="App-header">
+    //         <AddUser onAddUser={addUserHandler}/>
+    //         <UsersList users={users}/>
+    //     </header>
+    // </>;
 
+    return <fragment>
+        <header className="App-header">
+            <AddUser onAddUser={addUserHandler}/>
+            <UsersList users={users}/>
+        </header>
+    </fragment>;
 }
 
 export default App;
